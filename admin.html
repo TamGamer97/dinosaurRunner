@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Pannel</title>
+</head>
+<body>
+    <h1 style="color: white; margin-left: 20px; text-decoration-line: underline;">Welcome to the admin pannel</h1>
+
+
+    <div style="display: flex; gap: 10px; margin-left: 20px;">
+        <input maxlength="15" type="text" placeholder="Enter password" id="loginInp" style=" transition: 1s; width: 350px; height: 35px; color: white; background-color: #44475d; outline: none; border: none; padding-left: 15px; border-radius: 20px;">
+        
+        <div id="loginBtn" onclick="login()" style="width: 125px; height: 35px; background-color: #515574; transition: 1s; border-radius: 25px; display: flex; justify-content: center; align-items: center; cursor: pointer; display: flex; justify-content: center; align-items: center;">
+            <h1 style="font-weight: bold; color: white; margin-top: 17px; font-size: 15px; margin-bottom: 15px;">Login</h1>
+        </div>
+    </div>
+
+
+    <div id="resetBtn" onclick="resultLeaderboard()" style="width: 205px; height: 35px; background-color: #a8323c; transition: 1s; border-radius: 25px; display: none; justify-content: center; align-items: center; cursor: pointer; display: none; justify-content: center; align-items: center; margin-top: 20px; margin-left:20px;">
+        <h1 style="font-weight: bold; color: white; margin-top: 17px; font-size: 15px; margin-bottom: 15px;">Reset Leaderboard</h1>
+    </div>
+
+</body>
+<script type="module" src="main.js"></script>
+<script>
+
+
+    function login()
+    {
+        result = window.loginSystem(document.getElementById('loginInp').value)
+
+        if(result == true)
+        {
+            document.getElementById('resetBtn').style.display = 'flex'
+        }
+    }
+
+    function resultLeaderboard()
+    {
+        window.resultLeaderboardDB()
+    }
+
+</script>
+
+</html>
+
+
+<style>
+    body{
+        background-color: #36394b;
+        font-family: 'Trebuchet MS', sans-serif;
+    }
+</style>
