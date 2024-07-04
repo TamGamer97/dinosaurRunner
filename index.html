@@ -25,7 +25,7 @@
         
         </div>
 
-        <div id="submitForm" style="display: contents; transition: 1s; height: 100%; ">
+        <div id="submitForm" style="display: none; transition: 1s; height: 100%; ">
 
           <div style="position: absolute; height: 100%; width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; right: 0px;">
             <h1 id="msgTxt" style="font-weight: bold; color: white; margin-left: 950px; font-size: 15px; transition: 1s;"><span style="opacity: 0.5;">Submit your score to the leaderboard </span> <span style="opacity: 0.6; cursor: pointer;" title="Your score" onmouseenter="this.style.opacity = 1" onmouseleave="this.style.opacity = 0.6" id="scoreTxt">(1000)</span> </h1>
@@ -548,6 +548,16 @@
         */
         startListening: function() {
         // Keys.
+        console.log('a')
+        console.log('b')
+        document.addEventListener('touchstart', () => {
+          this.loadSounds();
+        this.activated = true;  
+          this.playSound(this.soundFx.BUTTON_PRESS);
+            this.tRex.startJump();
+          }) // add touch screen event listener to canvas for jump
+
+
         document.addEventListener(Runner.events.KEYDOWN, this);
         document.addEventListener(Runner.events.KEYUP, this);
         if (IS_MOBILE) {
@@ -588,6 +598,8 @@
         if (!this.tRex.jumping) {
         this.playSound(this.soundFx.BUTTON_PRESS);
         this.tRex.startJump();
+        console.log('jumped')
+        
         }
         }
         if (this.crashed && e.type == Runner.events.TOUCHSTART &&
@@ -744,6 +756,7 @@
         }
         function createCanvas(container, width, height, opt_classname) {
         var canvas = document.createElement('canvas');
+        canvas.id = 'canvas'
         canvas.className = opt_classname ? Runner.classes.CANVAS + ' ' +
         opt_classname : Runner.classes.CANVAS;
         canvas.width = width;
