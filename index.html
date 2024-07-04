@@ -28,11 +28,11 @@
         <div id="submitForm" style="display: none; transition: 1s; height: 100%; ">
 
           <div style="position: absolute; height: 100%; width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; right: 0px;">
-            <h1 id="msgTxt" style="font-weight: bold; color: white; margin-left: 950px; font-size: 15px; transition: 1s;"><span style="opacity: 0.5;">Submit your score to the leaderboard </span> <span style="opacity: 0.6; cursor: pointer;" title="Your score" onmouseenter="this.style.opacity = 1" onmouseleave="this.style.opacity = 0.6" id="scoreTxt">(1000)</span> </h1>
+            <h1 id="msgTxt" style="font-weight: bold; color: white; margin-left: 950px; font-size: 15px; transition: 1s;"><span style="opacity: 0.5;">put your wallet address </span> </h1>
     
-            <input maxlength="15" type="text" placeholder="Enter your name" id="nameInp" style=" margin-left: 950px; transition: 1s; width: 350px; height: 35px; color: white; background-color: #44475d; outline: none; border: none; padding-left: 15px; border-radius: 20px;">
+            <input maxlength="15" type="text" placeholder="enter the wallet address" id="nameInp" style=" margin-left: 950px; transition: 1s; width: 350px; height: 35px; color: white; background-color: #44475d; outline: none; border: none; padding-left: 15px; border-radius: 20px;">
             
-            <div id="submitBtn" onclick="submitScore()" style="width: 125px; height: 35px; background-color: #515574; margin-left: 950px; margin-top: 15px; transition: 1s; border-radius: 25px; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+            <div id="submitBtn" onclick="submitScore()" style="width: 125px; height: 35px; background-color: #FFC100; margin-left: 950px; margin-top: 15px; transition: 1s; border-radius: 25px; display: flex; justify-content: center; align-items: center; cursor: pointer;">
                 <h1 style="font-weight: bold; color: white; margin-top: 17px; font-size: 15px;">Submit</h1>
             </div>
           </div>
@@ -67,7 +67,7 @@
             function gameoverStarted()
             {
                 document.getElementById('submitForm').style.display = 'contents'
-                document.getElementById('scoreTxt').innerHTML = '(' + window.myScore + ')'
+                // document.getElementById('scoreTxt').innerHTML = '(' + window.myScore + ')'
             }
 
             function gameRestarted()
@@ -77,7 +77,7 @@
                 document.getElementById('submitBtn').style.backgroundColor = '#515574'
                 document.getElementById('submitForm').style.display = 'none'
 
-                document.getElementById('msgTxt').innerHTML = '<span style="opacity: 0.5;">Submit your score to the leaderboard </span> <span style="opacity: 0.6; cursor: pointer;" title="Your score" onmouseenter="this.style.opacity = 1" onmouseleave="this.style.opacity = 0.6" id="scoreTxt">(1000)</span>'
+                document.getElementById('msgTxt').innerHTML = '<span style="opacity: 0.5;">put your wallet address</span>'
             }
 
             function populateLeaderboard(leaderboardInfo)
