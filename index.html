@@ -1,6 +1,6 @@
 
 <head>
-    <title>Dinosaur Runner Game</title>
+    <title>Dinosaur Game</title>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <div style="display: flex; justify-content: center;">
@@ -41,12 +41,20 @@
 
         
     </div>
-    <h1 id="pressToStart" style="color: white; font-weight: bold; margin-top: 320px; transition: 1s; width: 100%; height: 100%; z-index: -5; position: absolute;">Press space to start</h1>
+    <h1 id="pressToStart" style="color: white; font-weight: bold; margin-top: 320px; transition: 1s; width: 100%; height: 100%; z-index: -5; position: absolute;">Press space/touch to start</h1>
     
         <!--https://codepen.io/MysticReborn/pen/rygqao/-->
         <script type="module" src="/main.js"></script>
         <script type="text/javascript">
 
+
+          // test game with iphone 8
+
+            document. addEventListener('keydown', function(event) {
+            if (event. code === 'Space') {
+            event. preventDefault();
+            }
+            });
 
             function animatePTS()
             {
@@ -74,7 +82,7 @@
             {
                 
                 document.getElementById('submitBtn').style.opacity = 1
-                document.getElementById('submitBtn').style.backgroundColor = '#515574'
+                document.getElementById('submitBtn').style.backgroundColor = '#FFC100'
                 document.getElementById('submitForm').style.display = 'none'
 
                 document.getElementById('msgTxt').innerHTML = '<span style="opacity: 0.5;">put your wallet address</span>'
@@ -118,7 +126,7 @@
 
             function submitScore()
             {
-                if(document.getElementById('submitBtn').style.opacity == 0.5 || document.getElementById('submitBtn').style.backgroundColor != 'rgb(81, 85, 116)')
+                if(document.getElementById('submitBtn').style.opacity == 0.5 || document.getElementById('submitBtn').style.backgroundColor != 'rgb(255, 193, 0)')
                 {
                     return
                 }
@@ -759,7 +767,7 @@
         canvas.id = 'canvas'
         canvas.className = opt_classname ? Runner.classes.CANVAS + ' ' +
         opt_classname : Runner.classes.CANVAS;
-        canvas.width = width;
+        canvas.width = window.outerWidth;;
         canvas.height = height;
         container.appendChild(canvas);
         return canvas;
@@ -1996,7 +2004,6 @@
       background-color: #36394b;
       color: #585858;
       font-size: 125%;
-      overflow: hidden;
     }
     
     body.safe-browsing {
