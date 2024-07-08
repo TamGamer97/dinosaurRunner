@@ -22,10 +22,6 @@
 
             </div>
 
-            <div id="debugDiv">
-
-            </div>
-
         
         </div>
 
@@ -54,17 +50,6 @@
 
           // test game with iphone 8
 
-          if (typeof console  != "undefined") 
-          if (typeof console.log != 'undefined')
-              console.olog = console.log;
-          else
-              console.olog = function() {};
-
-      console.log = function(message) {
-          console.olog(message);
-          document.getElementById('debugDiv').append( +  message );
-      };
-      console.error = console.debug = console.info =  console.log
 
 
             document. addEventListener('keydown', function(event) {
@@ -2713,7 +2698,12 @@
         if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
           new Runner('.interstitial-wrapper');
         } else {
-          document.getElementById("main-frame-notchrome").style.display="";
+          try{
+            document.getElementById("main-frame-notchrome").style.display="";
+
+          }catch{
+
+          }
         }
       </script>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></td>
