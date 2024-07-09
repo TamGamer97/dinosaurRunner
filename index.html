@@ -769,7 +769,7 @@
         canvas.id = 'canvas'
         canvas.className = opt_classname ? Runner.classes.CANVAS + ' ' +
         opt_classname : Runner.classes.CANVAS;
-        canvas.width = window.outerWidth;;
+        canvas.width = width;
         canvas.height = height;
         container.appendChild(canvas);
         return canvas;
@@ -2695,16 +2695,18 @@
       </div>
     
       <script type="text/javascript">
-        if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
-          new Runner('.interstitial-wrapper');
-        } else {
-          try{
-            document.getElementById("main-frame-notchrome").style.display="";
+        console.log('ios debug update 1')
+        new Runner('.interstitial-wrapper');
+        // if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
+        //   new Runner('.interstitial-wrapper');
+        // } else {
+        //   try{
+        //     document.getElementById("main-frame-notchrome").style.display="";
 
-          }catch{
+        //   }catch{
 
-          }
-        }
+        //   }
+        // }
       </script>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></td>
           </tr></table>
